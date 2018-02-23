@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import routerTypes from '../ducks/router/types';
+import App from '../components/App';
 import HomeContainer from './HomeContainer';
 
 const pagesMap = {
@@ -12,6 +13,9 @@ const PageComponent = ({ page = routerTypes.HOME }) => {
   return Page ? <Page /> : null
 }
 
-const mapState = ({ location }) => ({ page: location.type })
+const mapState = ({ location }) => ({ 
+  children: PageComponent(location.type),
+  page: location.type
+ })
 
-export default connect(mapState)(PageComponent);
+export default connect(mapState)(App);

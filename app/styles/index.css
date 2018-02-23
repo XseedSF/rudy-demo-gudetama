@@ -1,0 +1,141 @@
+html, body {
+  --main-font: #191919;
+  --secondary-font: #404040;
+  --yolk: #ffcc33;
+  --yolk-dark: #fc9700;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-family: Roboto;
+  background-color: #DDD;
+  color: var(--main-font);
+}
+
+* { box-sizing: border-box; }
+
+ul.nav {
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-top: -1.2em;
+  background-color: #FFF;
+}
+
+li {
+  display: inline-block;
+  background-color: #FFF;
+  padding: 1.7em 2em 1em;
+}
+
+li:hover {
+  background-color: var(--yolk);
+}
+
+li a {
+  color: var(--main-font);
+  text-decoration: none;
+}
+
+li.drop ul{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0;
+  margin: 1em 0 0 -2em;
+  z-index: 1;
+}
+
+li.drop li{
+  display: block;
+}
+
+li.drop .drop-btn {
+
+}
+
+li.drop .drop-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+li.drop:hover .drop-content{
+  display: block;
+}
+
+header .stripe {
+  background-color: var(--yolk);
+  height: 5em;
+}
+
+header .stripe .face {
+  margin: 0 auto;
+  display: block;
+}
+
+header .wave-container{
+  overflow: hidden;
+}
+
+header .wave-sprites{
+  float: left;
+  white-space: nowrap;
+  background-color: #FFF;
+}
+
+header .wave { 
+  display: inline-block;
+  overflow: hidden;
+  left: 0; 
+  height: 1em;
+  fill: var(--yolk); 
+  margin-bottom: -1px; 
+  -webkit-animation: wave-animation 1.6s infinite linear; 
+          animation: wave-animation 1.6s infinite linear; 
+}
+
+@-webkit-keyframes wave-animation { 
+  100% { 
+    -webkit-transform: translate(-50%, 0); 
+            transform: translate(-50%, 0); 
+  } 
+} 
+ 
+@keyframes wave-animation { 
+  100% { 
+    -webkit-transform: translate(-50%, 0); 
+            transform: translate(-50%, 0); 
+  } 
+}
+
+main {
+  height: 100%;
+  padding: 2em 4em;
+}
+
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background-color: #FFF;
+  color: var(--yolk-dark);
+  font-size: 0.75em;
+  padding: 0.5em 2em;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.code-snippet{
+  font-family: 'Roboto Mono', monospace;
+  color: var(--secondary-font);
+}

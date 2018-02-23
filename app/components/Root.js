@@ -1,6 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
-import AppContainer from '../../containers/AppContainer';
+import AppContainer from '../containers/AppContainer';
+import styles from '../styles/index.css';
 
 const Root = ({ store }) => {
 	return(

@@ -1,4 +1,2 @@
-import Root from './Root'
-import Home from './Home'
-
-export { Root, Home };
+export { default as Root } from './Root'
+export { default as Home } from './Home'
