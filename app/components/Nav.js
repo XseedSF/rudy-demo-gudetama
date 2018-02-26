@@ -5,18 +5,18 @@ import { routerTypes } from '../ducks/router'
 
 
 const Nav = ({ redirectToBacon, redirectToBacon3,...props}) => (
-  <ul className='nav'>
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/smartphone">Smartphone</Link></li>
-    <li className='drop'>
+  <nav className='nav'>
+    <Link to="/">Home</Link>
+    <Link to="/smartphone">Smartphone</Link>
+    <div className='drop'>
       <a href="javascript:void(0)" className="drop-btn">Bacon</a>
-      <ul className='drop-content'>
-        <li><Link to="/bacon/1">Bacon 1</Link></li>
-        <li><Link to={{ type: routerTypes.BACON, payload: { id: 2 } }}>Bacon 2</Link></li>
-        <li><a href="javascript:void(0)" onClick={redirectToBacon3}>Bacon 3</a></li>
-      </ul>
-    </li>
-  </ul>
+      <nav className='drop-content'>
+        <Link to="/bacon/1">Bacon 1</Link>
+        <Link to={{ type: routerTypes.BACON, payload: { id: 2 } }}>Bacon 2</Link>
+        <a href="javascript:void(0)" onClick={redirectToBacon3}>Bacon 3</a>
+      </nav>
+    </div>
+  </nav>
 );
 
 Nav.propTypes = {

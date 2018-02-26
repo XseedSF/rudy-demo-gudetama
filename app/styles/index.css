@@ -15,31 +15,35 @@ html, body {
 
 * { box-sizing: border-box; }
 
-ul.nav {
+nav.nav {
   list-style-type: none;
   width: 100%;
   padding: 0;
   margin: 0;
-  margin-top: -1.2em;
+  margin-top: -1.5em;
   background-color: #FFF;
 }
 
-li {
+.nav a {
   display: inline-block;
   background-color: #FFF;
   padding: 1.7em 2em 1em;
 }
 
-li:hover {
+.nav div.drop {
+  display: inline-block;
+}
+
+.nav a:hover {
   background-color: var(--yolk);
 }
 
-li a {
+.nav a {
   color: var(--main-font);
   text-decoration: none;
 }
 
-li.drop ul{
+div.drop nav{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -50,15 +54,15 @@ li.drop ul{
   z-index: 1;
 }
 
-li.drop li{
+div.drop a{
   display: block;
 }
 
-li.drop .drop-btn {
+div.drop .drop-btn {
 
 }
 
-li.drop .drop-content{
+div.drop .drop-content{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -67,7 +71,7 @@ li.drop .drop-content{
   z-index: 1;
 }
 
-li.drop:hover .drop-content{
+div.drop:hover .drop-content{
   display: block;
 }
 
