@@ -9,7 +9,7 @@ html, body {
   width: 100%;
   font-size: 16px;
   font-family: Roboto;
-  background-color: #DDD;
+  background-color: #EEE;
   color: var(--main-font);
 }
 
@@ -83,12 +83,17 @@ header .stripe .face {
 
 header .wave-container{
   overflow: hidden;
+  position: relative;
+  height: 1.5em;
 }
 
 header .wave-sprites{
-  float: left;
+  position: absolute;
   white-space: nowrap;
-  background-color: #FFF;
+}
+
+header .wave-sprites-rev {
+  margin-left: -200px;
 }
 
 header .wave { 
@@ -102,6 +107,21 @@ header .wave {
           animation: wave-animation 1.6s infinite linear; 
 }
 
+header .wave-rev { 
+  display: inline-block;
+  overflow: hidden;
+  left: 0; 
+  height: 1em;
+  fill: var(--yolk-dark); 
+  margin-bottom: -1px; 
+  -webkit-animation: wave-rev-animation .8s infinite linear; 
+          animation: wave-rev-animation .8s infinite linear; 
+}
+
+header .waves {
+  float: left;
+}
+
 @-webkit-keyframes wave-animation { 
   100% { 
     -webkit-transform: translate(-50%, 0); 
@@ -113,6 +133,20 @@ header .wave {
   100% { 
     -webkit-transform: translate(-50%, 0); 
             transform: translate(-50%, 0); 
+  } 
+}
+
+@-webkit-keyframes wave-rev-animation { 
+  100% { 
+    -webkit-transform: translate(50%, 0); 
+            transform: translate(50%, 0); 
+  } 
+} 
+ 
+@keyframes wave-rev-animation { 
+  100% { 
+    -webkit-transform: translate(50%, 0); 
+            transform: translate(50%, 0); 
   } 
 }
 
@@ -136,6 +170,19 @@ footer {
 }
 
 .code-snippet{
+  /* background-color: #DDD; */
+  padding: .7em;
   font-family: 'Roboto Mono', monospace;
+  font-size: .8em;
   color: var(--secondary-font);
+}
+
+.code-snippet p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: .1em;
+}
+
+.code-snippet p:nth-child(odd){
+  background-color: #CCC;
 }

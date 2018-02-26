@@ -3,13 +3,16 @@ import { connect } from "react-redux";
 import routerTypes from '../ducks/router/types';
 import App from '../components/App';
 import HomeContainer from './HomeContainer';
+import ImageContainer from './ImageContainer';
 
 const pagesMap = {
   [routerTypes.HOME]: HomeContainer,
+  [routerTypes.SMARTPHONE]: ImageContainer,
+  [routerTypes.BACON]: ImageContainer,
 }
 
-const PageComponent = ({ page = routerTypes.HOME }) => {
-  const Page = pagesMap[page]
+const PageComponent = (routerType = routerTypes.HOME) => {
+  const Page = pagesMap[routerType]
   return Page ? <Page /> : null
 }
 

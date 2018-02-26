@@ -29,6 +29,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
+    "react-syntax-highlighter": "^7.0.1",
     "redux": "^3.7.2",
     "redux-first-router": "^0.0.4-rudy",
     "redux-first-router-link": "^0.0.3-rudy",

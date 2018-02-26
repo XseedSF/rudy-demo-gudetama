@@ -1,4 +1,6 @@
 import React from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter/prism';
+import { dark } from 'react-syntax-highlighter/styles/prism';
 
 const Home = (props) => (
   <div>
@@ -6,18 +8,20 @@ const Home = (props) => (
     <p>The purpose of this site is to test differents ways to perform the routing of a React/Redux application using the package mentioned above.</p>
     <p>Everything else is just for fun (⊃◜⌓◝⊂)</p>
     <div className='code-snippet'>
-      <p>&lt;ul className='nav'></p>
-      <p>  &lt;li>&lt;Link to="/">Home&lt;/Link>&lt;/li></p>
-      <p>  &lt;li>&lt;Link to="/smartphone">Smartphone&lt;/Link>&lt;/li></p>
-      <p>  &lt;li className='drop'></p>
-      <p>    &lt;a href="javascript:void(0)" className="drop-btn">Bacon&lt;/a></p>
-      <p>    &lt;ul className='drop-content'></p>
-      <p>      &lt;li>&lt;Link to="/bacon/1">Bacon 1&lt;/Link>&lt;/li></p>
-      <p>      &lt;li>&lt;Link to={'{'}redirectToBacon(2){'}'}>Bacon 2&lt;/Link>&lt;/li></p>
-      <p>      &lt;li>&lt;Link to={'{'}redirectToBacon(3){'}'}>Bacon 3&lt;/Link>&lt;/li></p>
-      <p>    &lt;/ul></p>
-      <p>  &lt;/li></p>
-      <p>&lt;/ul></p>
+    <SyntaxHighlighter language='javascript' style={dark}>{
+         "// Links can be used providing a realtive path"
+       + "\n// this allows the use of SEO links"
+       + "\n<Link to='/'>Home</Link>"
+       + "\n<Link to='/smartphone'>Smartphone</Link>"
+       + "\n"
+       + "\n<Link to='/bacon/1'>Bacon 1</Link>"
+       + "\n<Link to={{ type: routerTypes.BACON, payload: { id: 2 } }}>Bacon 2</Link>"
+       + "\n<a onClick={redirectToBacon3} href='javascript:void(0)'>Bacon 3</a>"
+       + "\n"
+       + "\nconst mapDispatchToProps = dispatch => ({"
+       + "\n  redirectToBacon3: () => dispatch({type: routerTypes.BACON, payload: { id: 3 }}),"
+       + "\n});"
+    }</SyntaxHighlighter>
     </div>
   </div>
 )
