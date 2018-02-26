@@ -22,6 +22,24 @@ const Home = (props) => (
        + "\n  redirectToBacon3: () => dispatch({type: routerTypes.BACON, payload: { id: 3 }}),"
        + "\n});"
     }</SyntaxHighlighter>
+     <SyntaxHighlighter language='javascript' style={dark}>{
+          "const routesMap = {"
+        + "\n  [types.HOME]: { path: '/' },"
+        + "\n  [types.BACON]: { path: '/bacon/:id' },"
+        + "\n  // Smartphone uses a thunk to perform side effects"
+        + "\n  [types.SMARTPHONE]: { path: '/smartphone', thunk: operations.smartphone },"
+        + "\n}"
+        + "\n"
+        + "\nconst operations = {"
+        + "\n  home: actions.home,"
+        + "\n  bacon: actions.bacon,"
+        + "\n  // Inside the thunk we can wait for async operations and dispatch side effects"
+        + "\n  smartphone: async (dispatch, getState) => {"
+        + "\n    const ok = await sideEffect();"
+        + "\n    dispatch(actions.sideEffect());"
+        + "\n  },"
+        + "\n}"
+    }</SyntaxHighlighter>
     </div>
   </div>
 )

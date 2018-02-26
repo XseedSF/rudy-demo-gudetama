@@ -8,6 +8,7 @@ const imgsBacon = [imgBacon1, imgBacon2, imgBacon3];
 
 const defaultState = {
   src: null,
+  sideEffect: false,
 }
 
 const image = (state = defaultState, action) => {
@@ -15,12 +16,14 @@ const image = (state = defaultState, action) => {
     const { type, payload } = action;
     switch (type){
       case (routerTypes.SMARTPHONE):
-        return { src: imgSmart };
+        return { src: imgSmart, sideEffect: false };
       case (routerTypes.BACON):
-        return { src: imgsBacon[payload.id-1] } 
+        return { src: imgsBacon[payload.id-1], sideEffect: false }
+      case (routerTypes.SIDE_EFFECT):
+        return { ...state, sideEffect: true}
     }
   }
-  return defaultState
+  return state
 }
 
 export default image;

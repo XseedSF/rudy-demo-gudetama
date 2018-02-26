@@ -15,6 +15,11 @@ html, body {
 
 * { box-sizing: border-box; }
 
+#root {
+  min-height:100%;
+  position:relative;
+}
+
 nav.nav {
   list-style-type: none;
   width: 100%;
@@ -50,7 +55,6 @@ div.drop nav{
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 0;
-  margin: 1em 0 0 -2em;
   z-index: 1;
 }
 
@@ -157,12 +161,14 @@ header .waves {
 main {
   height: 100%;
   padding: 2em 4em;
+  padding-bottom: 6em;
 }
 
 footer {
   position:absolute;
   bottom:0;
   width:100%;
+  height: 6em;
   background-color: #FFF;
   color: var(--yolk-dark);
   font-size: 0.75em;
@@ -189,4 +195,8 @@ footer {
 
 .code-snippet p:nth-child(odd){
   background-color: #CCC;
+}
+
+.image{
+  text-align: center;
 }

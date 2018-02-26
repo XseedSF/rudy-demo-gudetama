@@ -23,14 +23,12 @@ const Header = (props) => (
       <img className='face' src={face} alt="-_-" />
     </div>
     <div className='wave-container'>
-    {/* <div className='waves'> */}
-    <div className='wave-sprites wave-sprites-rev'>
-      { wavesRev }
-    </div>
-    <div className='wave-sprites'>
-      { waves }
-    </div>
-    {/* </div> */}
+      <div className='wave-sprites wave-sprites-rev'>
+        { wavesRev }
+      </div>
+      <div className='wave-sprites'>
+        { waves }
+      </div>
     </div>
     <NavContainer></NavContainer>
   </header>
