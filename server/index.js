@@ -6,17 +6,19 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 
+const history = require('connect-history-api-fallback');
 const webpackConfigurer = require("../webpack/webpack.config");
 const routers = require("./routes");
 
 const isProd = process.env.NODE_ENV === "production";
+console.log('isProd=',isProd);
 var deployPath = process.env.DEPLOY_PATH || "";
 const port = process.env.PORT || 3001;
 
 // Setup mongoDB
-mongoose.connect("mongodb://localhost/xs-event-countdown", {
-});
-mongoose.Promise = global.Promise;
+// mongoose.connect("mongodb://localhost/xs-event-countdown", {
+// });
+// mongoose.Promise = global.Promise;
 
 // Setup server
 const app = express();
@@ -28,6 +30,7 @@ if(!isProd) {
   const webpackDevMiddleware = require("webpack-dev-middleware");
   const webpackHotMiddleware = require("webpack-hot-middleware");
 
+  app.use(history());
   app.use(
     webpackDevMiddleware(compiler, {
       noInfo: true,
@@ -56,12 +59,10 @@ if (isProd) {//production
     // cookie: { secure: true }
   };
   app.use(session(sess));
-  
 }
 
 app.use(bodyParser.json());
 // app.use(deployPath,favicon(path.join(__dirname, "public", "", "favicon.ico")));
-app.use(deployPath+"/api/events", routers.events);
 
 // All remaining requests return the React app, so it can handle routing.
 if (isProd) {
@@ -71,9 +72,7 @@ if (isProd) {
   app.get(deployPath+"/*", function(request, response) {
     response.sendFile(path.resolve(__dirname, "../dist", "index.html"));
   });
-} else {
-  app.use("*", routers.views(compiler));
-}
+} 
 
 app.locals.port = port;
 app.listen(port);

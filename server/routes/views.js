@@ -4,6 +4,7 @@ const router = require('express-promise-router')();
 const views = (compiler) => {
   router.route("*")
   .get((req, res) => {
+    console.log('get');
     var filename = path.join(compiler.outputPath, "index.html");
     compiler.outputFileSystem.readFile(filename, (err, result, next) => {
       if (err) {
