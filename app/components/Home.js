@@ -10,7 +10,7 @@ const Home = (props) => (
     <p>The purpose of this site is to test differents ways to perform the routing of a React/Redux application using the package mentioned above.</p>
     </section>
     <section>
-    <p>In order to make this POC more fun the site is themed after Gudetama, a cute japanese character (⊃◜⌓◝⊂)</p>
+    <p>In order to make this POC more fun the site is Gudetama themed, a cute japanese character (⊃◜⌓◝⊂)</p>
     </section>
     <section>
     <div className='code-snippet'>    

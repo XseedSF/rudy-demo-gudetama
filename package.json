@@ -1,10 +1,10 @@
 {
-  "name": "xs-event-countdown",
+  "name": "rudy-demo-gudetama",
   "version": "1.0.0",
   "engines": {
     "node": "8.9.4"
   },
-  "description": "Simple project with a node backend, react with rudys front",
+  "description": "Simple project of a react app using rudy for routing served by a node backend. The site is Gudetama themed",
   "main": "index.js",
   "scripts": {
     "start": "node index.js && npm open",
