@@ -1,9 +1,9 @@
 # redux-first-router@rudy Demo
 
-Welcome to this redux-first-router@rudy demo.
-The purpose of this site is to test differents ways to perform the routing of a React/Redux application using the package mentioned above.
+Welcome to this redux-first-router@rudy demo. [Live Demo](https://rudy-demo-gudetama.firebaseapp.com)  
+The purpose of this site is to test differents ways to perform the routing of a React/Redux application using the package mentioned above.  
 
-In order to make this POC more fun the site is Gudetama themed, a cute japanese character (⊃◜⌓◝⊂)
+In order to make this POC more fun the site is Gudetama themed, a cute japanese character (⊃◜⌓◝⊂)  
 
 ## Navigation
 ```jsx

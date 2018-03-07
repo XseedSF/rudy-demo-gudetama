@@ -17,6 +17,6 @@
   "extends": [ "eslint:recommended", "plugin:react/recommended" ],
   "indent": ["error", 2],
   "globals": {
-    "DEPLOY_PATH": true
+    "RUDY_DEMO_DEPLOY_PATH": true
   }
 }

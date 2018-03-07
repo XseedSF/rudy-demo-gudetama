@@ -2,8 +2,8 @@ import { connectRoutes } from 'redux-first-router';
 import types from './types'
 import operations from './operations'
 
-const { DEPLOY_PATH } = process.env;
-const config = DEPLOY_PATH ? { basename: SURA_LEADS_DEPLOY_PATH } : {};
+const { RUDY_DEMO_DEPLOY_PATH } = process.env;
+const config = RUDY_DEMO_DEPLOY_PATH ? { basename: RUDY_DEMO_DEPLOY_PATH } : {};
 
 // routes map
 const routesMap = {

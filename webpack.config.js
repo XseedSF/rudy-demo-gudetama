@@ -1,17 +1,18 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Merge = require("webpack-merge");
-const envConfigDev = require(`./webpack.development.js`);
-const envConfigProd = require(`./webpack.production.js`);
+const envConfigDev = require(`./webpack/webpack.development.js`);
+const envConfigProd = require(`./webpack/webpack.production.js`);
 
-const { apps } = require('../ecosystem.config')
+const { apps } = require('./ecosystem.config')
 module.exports = function(env) {
-  var deployPath = (env == 'production' ? apps[0].env_production.DEPLOY_PATH : "") + "/";
+  const { RUDY_DEMO_DEPLOY_PATH = "" } = apps[0].env_production
+  var deployPath = (env == 'production' ? RUDY_DEMO_DEPLOY_PATH : "") + "/";
 
   const config = {
     entry: ["./app/index.js"],
     output: {
-      path: path.join(__dirname, "../dist"),
+      path: path.join(__dirname, "./dist"),
       publicPath: deployPath,
       filename: "[name].bundle.js"
     },

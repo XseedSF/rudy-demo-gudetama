@@ -4,11 +4,11 @@ const path = require("path");
 const webpack = require("webpack");
 
 const history = require('connect-history-api-fallback');
-const webpackConfigurer = require("../webpack/webpack.config");
+const webpackConfigurer = require("../webpack.config");
 
 const isProd = process.env.NODE_ENV === "production";
 console.log('isProd=',isProd);
-var deployPath = process.env.DEPLOY_PATH || "";
+var deployPath = process.env.RUDY_DEMO_DEPLOY_PATH || "";
 const port = process.env.PORT || 3001;
 
 // Setup server
