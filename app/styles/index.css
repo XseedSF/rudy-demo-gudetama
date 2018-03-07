@@ -1,6 +1,7 @@
 html, body {
   --main-font: #191919;
-  --secondary-font: #404040;
+  --secondary-font: #313131;
+  --thirdary-font: #575757;
   --yolk: #ffcc33;
   --yolk-dark: #fc9700;
   margin: 0;
@@ -180,23 +181,31 @@ footer {
 }
 
 .code-snippet{
-  /* background-color: #DDD; */
-  padding: .7em;
+  color: var(--secondary-font);
+  margin: 2em 0;
+}
+
+.code-snippet code {
   font-family: 'Roboto Mono', monospace;
   font-size: .8em;
-  color: var(--secondary-font);
 }
 
 .code-snippet p {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: .1em;
+  margin: 1em 0;
 }
 
-.code-snippet p:nth-child(odd){
-  background-color: #CCC;
+.code-snippet .bold.sub{
+  color: var(--thirdary-font);
 }
 
 .image{
   text-align: center;
+}
+
+.home p{
+  line-height: 1em;
+}
+
+.home section {
+  margin: 1.8em 0;
 }
